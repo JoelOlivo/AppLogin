@@ -1,17 +1,18 @@
-﻿using AppLogin.Domain.User.ValueObjects;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppLogin.Domain.Entities;
+using AppLogin.Domain.ValueObjects;
 
-namespace AppLogin.Domain.User.Entities
+namespace AppLogin.Domain.Interfaces
 {
     public interface IUserRepository
     {
         Task<User> Add(User user);
-        Task<Boolean> Update(User user);
-        Task<Boolean> Delete(User user);
+        Task<bool> Update(User user);
+        Task<bool> Delete(User user);
         Task<User> GetById(UserId id);
         Task<User> GetByEmail(UserEmail email);
         Task<List<User>> GetAll();
