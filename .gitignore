@@ -1,0 +1,39 @@
+# Archivos de configuración de usuario (Visual Studio, Rider, etc.)
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Directorios de compilación comunes
+bin/
+obj/
+
+# Archivos de salida de compilación
+*.dll
+*.exe
+*.log
+*.sql
+*.js
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+
+# Archivos temporales de Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Archivos de base de datos locales de SQL Server
+*.mdf
+*.ldf
+
+# Otros archivos específicos de Visual Studio
+*.dbmdl
+
+# Archivos de configuración específicos de proyectos
+appsettings.Development.json
+appsettings.Production.json
+
+# Archivos de configuración de herramientas y entornos
+.env
