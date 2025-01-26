@@ -1,4 +1,4 @@
-﻿namespace AppLogin.Domain
+﻿namespace AppLogin.Infrastructure
 {
     public class Class1
     {
