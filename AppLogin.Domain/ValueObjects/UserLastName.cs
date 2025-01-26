@@ -19,11 +19,6 @@ namespace AppLogin.Domain.ValueObjects
         //Valida que el valor de apellido no sea nulo, tenga al menos 2 caracteres y no tenga más de 50 caracteres
         private void EnsureIsValid(string value)
         {
-            if (string.IsNullOrEmpty(value))
-            {
-                throw new ArgumentException("El apellido no puede ser nulo");
-            }
-
             if (value.Length < 2)
             {
                 throw new ArgumentException("El apellido debe tener al menos 2 caracteres");
