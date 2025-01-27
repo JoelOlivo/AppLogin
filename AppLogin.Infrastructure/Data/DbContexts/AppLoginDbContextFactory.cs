@@ -17,7 +17,7 @@ namespace AppLogin.Infrastructure.Data.DbContexts
             var optionsBuilder = new DbContextOptionsBuilder<AppLoginDbContext>();
 
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(@"C:\Proyectos\AppLogin\AppLogin.WebApi") // Ruta directa
+                .SetBasePath(@"C:\Proyectos\AppLogin\AppLogin.WebApi")
                 .AddJsonFile("appsettings.json")
                 .Build();
 

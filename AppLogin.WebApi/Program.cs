@@ -1,5 +1,12 @@
-using AppLogin.Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using AppLogin.Infrastructure.Data.DbContexts;
+using AppLogin.Application.UserAdd;
+using AppLogin.Application.UserUpdate;
+using AppLogin.Application.UserDelete;
+using AppLogin.Application.UserGetById;
+using AppLogin.Application.UserGetAll;
+using AppLogin.Domain.Interfaces;
+using AppLogin.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +20,13 @@ builder.Services.AddSwaggerGen();
 //Agregar contexto de base de datos
 builder.Services.AddDbContext<AppLoginDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<UserAdd>();
+builder.Services.AddScoped<UserUpdate>();
+builder.Services.AddScoped<UserDelete>();
+builder.Services.AddScoped<UserGetById>();
+builder.Services.AddScoped<UserGetAll>();
 
 
 var app = builder.Build();
