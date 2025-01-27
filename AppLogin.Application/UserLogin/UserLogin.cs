@@ -28,17 +28,19 @@ namespace AppLogin.Application.UserLogin
             var user = await _userRepository.GetByEmail(new UserEmail(email));
             if (user == null)
             {
-                throw new UnauthorizedAccessException("El usuario no existe");
+                throw new UnauthorizedAccessException("El email no está registrado");
             }
 
             //Verifica la contraseña
-            if (!_passwordHasher.Check(user.Password.Value, new UserPassword(password)))
+            var passwordHash = _passwordHasher.Hash(new UserPassword(password));
+            if (user.Password.Value != passwordHash)
             {
-                throw new UnauthorizedAccessException("Credenciales incorrectas");
+                throw new UnauthorizedAccessException("La contraseña no es correcta");
             }
 
-            //Genera el token
-            return _jwtGenerator.GenerateToken(user);
+            //Generar Token
+            var token = _jwtGenerator.GenerateToken(user);
+            return token;
         }
     }
 }

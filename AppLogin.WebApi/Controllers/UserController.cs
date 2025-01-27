@@ -10,11 +10,13 @@ using AppLogin.Application.UserUpdate;
 using AppLogin.Application.UserDelete;
 using AppLogin.Application.UserGetAll;
 using AppLogin.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AppLogin.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class UserController : ControllerBase
     {
         private readonly UserAdd _userAdd;
@@ -57,6 +59,7 @@ namespace AppLogin.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(Guid id, [FromBody] UserDto userDto)
         {
             if (userDto == null)
@@ -82,6 +85,7 @@ namespace AppLogin.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(Guid id)
         {
             var userDeleted = await _userDelete.Execute(id);
@@ -95,6 +99,7 @@ namespace AppLogin.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetById(Guid id)
         {
             try
@@ -109,6 +114,7 @@ namespace AppLogin.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAll()
         {
             var users = await _userGetAll.Execute();

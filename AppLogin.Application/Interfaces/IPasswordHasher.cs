@@ -10,6 +10,6 @@ namespace AppLogin.Application.Interfaces
     public interface IPasswordHasher
     {
         string Hash(UserPassword userPassword);
-        bool Check(string hash, UserPassword userPassword);
+        //bool Check(string hash, UserPassword userPassword);
     }
 }
