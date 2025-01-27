@@ -9,11 +9,14 @@ namespace AppLogin.Domain.Entities
 {
     public class User
     {
-        public UserId Id { get; }
+        public UserId Id { get; set; }
         public UserEmail Email { get; set; }
         public UserPassword Password { get; set; }
         public UserFirstName FirstName { get; set; }
         public UserLastName LastName { get; set; }
+
+        // Constructor sin parámetros para EF
+        public User() { }
 
         public User(UserId id, UserEmail email, UserPassword password, UserFirstName firstName, UserLastName lastName)
         {

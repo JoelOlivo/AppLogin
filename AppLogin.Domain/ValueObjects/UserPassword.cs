@@ -10,6 +10,8 @@ namespace AppLogin.Domain.ValueObjects
     {
         public string Value { get; }
 
+        public UserPassword() { }
+
         public UserPassword(string value)
         {
             EnsureIsValid(value);

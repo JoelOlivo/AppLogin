@@ -10,6 +10,8 @@ namespace AppLogin.Domain.ValueObjects
     {
         public Guid Value { get; }
 
+        public UserId() { }
+
         public UserId(Guid value)
         {
             EnsureIsValid(value);
