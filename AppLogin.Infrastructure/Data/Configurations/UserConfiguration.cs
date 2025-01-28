@@ -23,16 +23,16 @@ namespace AppLogin.Infrastructure.Data.Configurations
             // Configuración del Value Object UserId
             builder.Property(u => u.Id)
                 .HasConversion(
-                    id => id.Value, // De UserId a Guid
-                    value => new UserId(value) // De Guid a UserId
+                    id => id.Value,
+                    value => new UserId(value) 
                 )
                 .IsRequired();
 
             // Configuración del Value Object UserEmail
             builder.Property(u => u.Email)
                 .HasConversion(
-                    email => email.Value, // De UserEmail a string
-                    value => new UserEmail(value) // De string a UserEmail
+                    email => email.Value, 
+                    value => new UserEmail(value)
                 )
                 .IsRequired()
                 .HasMaxLength(100);
@@ -40,8 +40,8 @@ namespace AppLogin.Infrastructure.Data.Configurations
             // Configuración del Value Object UserPassword
             builder.Property(u => u.Password)
                 .HasConversion(
-                    password => password.Value, // De UserPassword a string
-                    value => new UserPassword(value) // De string a UserPassword
+                    password => password.Value,
+                    value => new UserPassword(value) 
                 )
                 .IsRequired()
                 .HasMaxLength(100);
@@ -49,8 +49,8 @@ namespace AppLogin.Infrastructure.Data.Configurations
             // Configuración del Value Object UserFirstName
             builder.Property(u => u.FirstName)
                 .HasConversion(
-                    firstName => firstName.Value, // De UserFirstName a string
-                    value => new UserFirstName(value) // De string a UserFirstName
+                    firstName => firstName.Value,
+                    value => new UserFirstName(value)
                 )
                 .IsRequired()
                 .HasMaxLength(50);
@@ -58,8 +58,8 @@ namespace AppLogin.Infrastructure.Data.Configurations
             // Configuración del Value Object UserLastName
             builder.Property(u => u.LastName)
                 .HasConversion(
-                    lastName => lastName.Value, // De UserLastName a string
-                    value => new UserLastName(value) // De string a UserLastName
+                    lastName => lastName.Value,
+                    value => new UserLastName(value) 
                 )
                 .IsRequired(false)
                 .HasMaxLength(50);

@@ -25,10 +25,10 @@ namespace AppLogin.Infrastructure.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Email, user.Email.Value),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Aud, _configuration["Jwt:Audience"]),
-                new Claim(JwtRegisteredClaimNames.Iss, _configuration["Jwt:Issuer"])
+                new Claim(JwtRegisteredClaimNames.Email, user.Email.Value), // Correo del usuario
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // Identificador único del token
+                new Claim(JwtRegisteredClaimNames.Aud, _configuration["Jwt:Audience"]), // Audiencia
+                new Claim(JwtRegisteredClaimNames.Iss, _configuration["Jwt:Issuer"]) // Emisor
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

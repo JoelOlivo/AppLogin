@@ -15,6 +15,7 @@ namespace AppLogin.Infrastructure.Data.DbContexts
         {
         }
 
+        //Tablas
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

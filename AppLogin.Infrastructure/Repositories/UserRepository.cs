@@ -13,6 +13,7 @@ namespace AppLogin.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
+        //Inyecta dbcontext (dbset)
         private readonly AppLoginDbContext _context;
 
         public UserRepository(AppLoginDbContext context)
