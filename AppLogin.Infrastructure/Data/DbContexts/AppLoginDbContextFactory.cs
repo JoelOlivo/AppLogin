@@ -12,6 +12,7 @@ namespace AppLogin.Infrastructure.Data.DbContexts
 {
     public class AppLoginDbContextFactory : IDesignTimeDbContextFactory<AppLoginDbContext>
     {
+        //Indica la conexion a ef en tiempo de diseño
         public AppLoginDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppLoginDbContext>();
