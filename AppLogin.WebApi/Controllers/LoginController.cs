@@ -11,6 +11,7 @@ namespace AppLogin.WebApi.Controllers
     {
         private readonly UserLogin _userLogin;
 
+        //Inyectar caso de uso
         public LoginController(UserLogin userLogin)
         {
             _userLogin = userLogin;

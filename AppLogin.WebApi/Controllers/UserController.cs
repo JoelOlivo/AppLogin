@@ -25,6 +25,7 @@ namespace AppLogin.WebApi.Controllers
         private readonly UserGetById _userGetById;
         private readonly UserGetAll _userGetAll;
 
+        //Inyectar casos de uso
         public UserController(
             UserAdd userAdd,
             UserUpdate userUpdate,
@@ -67,7 +68,6 @@ namespace AppLogin.WebApi.Controllers
                 return BadRequest("El cuerpo de la solicitud no puede estar vacío");
             }
 
-            // Llamar al caso de uso para actualizar el usuario
             var userUpdated = await _userUpdate.Execute(
                 id,  
                 userDto.Email,  
