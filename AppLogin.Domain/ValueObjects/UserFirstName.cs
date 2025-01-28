@@ -10,6 +10,7 @@ namespace AppLogin.Domain.ValueObjects
     {
         public string Value { get; }
 
+        // Constructor sin parámetros para EF
         public UserFirstName() { }
 
         public UserFirstName(string value)

@@ -10,6 +10,7 @@ namespace AppLogin.Domain.ValueObjects
     {
         public Guid Value { get; }
 
+        // Constructor sin parámetros para EF
         public UserId() { }
 
         public UserId(Guid value)
