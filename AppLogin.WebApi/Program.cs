@@ -54,6 +54,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Agregar servicios CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy => policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,6 +78,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication(); // Activar autenticación
 
 app.UseAuthorization();
+
+app.UseCors("AllowReactApp");
 
 app.MapControllers();
 

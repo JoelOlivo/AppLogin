@@ -29,7 +29,6 @@ namespace AppLogin.Infrastructure.Services
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Aud, _configuration["Jwt:Audience"]),
                 new Claim(JwtRegisteredClaimNames.Iss, _configuration["Jwt:Issuer"])
-
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
