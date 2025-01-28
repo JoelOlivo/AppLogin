@@ -10,6 +10,7 @@ namespace AppLogin.Domain.Interfaces
 {
     public interface IUserRepository
     {
+        //Agregar métodos CRUD
         Task<User> Add(User user);
         Task<bool> Update(User user);
         Task<bool> Delete(User user);
